@@ -19,7 +19,7 @@ wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_con
 cat bashrc >> ${HOME}/.bashrc
 cat gitconfig >> ${HOME}/.gitconfig
 cat screenrc >> ${HOME}/.screenrc
-cat mxnet_config >> ${HOME}/workspace/incubator-mxnet/.git/config
+cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
 
 cd ${HOME}
 
