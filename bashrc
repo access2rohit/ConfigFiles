@@ -11,8 +11,8 @@ alias storage='du -h --max-depth=1'
 alias pp='export PYTHONPATH=`pwd`/python; echo PYTHONPATH=$PYTHONPATH'
 alias rebase_upstream="git stash; git fetch upstream && git rebase upstream/master; git stash pop"
 alias flags='python -c "from mxnet.runtime import Features; print(Features())"'
-alias mmx="cd build && cmake -DCMAKE_BUILD_TYPE=Release -GNinja .. && ninja -v && cd .."
-alias dmmx="cd build && cmake -DCMAKE_BUILD_TYPE=Debug -GNinja .. && ninja -v && cd .."
+alias mmx="cd build && (cmake -DCMAKE_BUILD_TYPE=Release -GNinja .. && ninja -v && cd .. || cd ..)"
+alias dmmx="cd build && (cmake -DCMAKE_BUILD_TYPE=Debug -GNinja .. && ninja -v && cd .. || cd ..)"
 alias cmmx="rm -rf build && mkdir build && mmx"
 alias cdmmx="rm -rf build && mkdir build && dmmx"
 git_squash() {
