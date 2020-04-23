@@ -22,6 +22,7 @@ cat screenrc >> ${HOME}/.screenrc
 cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
 
 cd ${HOME}
+rm -rf ${HOME}/build
 
 bash install_ocaml_unison.sh
 
