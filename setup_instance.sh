@@ -12,19 +12,17 @@ cd ${HOME}/temp
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/bashrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/gitconfig
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/screenrc
-wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_config
-
+wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
 
 cat bashrc >> ${HOME}/.bashrc
 cat gitconfig >> ${HOME}/.gitconfig
 cat screenrc >> ${HOME}/.screenrc
 cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
+bash install_ocaml_unison.sh
 
 cd ${HOME}
 rm -rf ${HOME}/build
-
-bash install_ocaml_unison.sh
 
 cd ${HOME}
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
