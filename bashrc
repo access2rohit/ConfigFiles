@@ -15,6 +15,7 @@ alias mmx="cd build && cmake -DCMAKE_BUILD_TYPE=Release -GNinja .. && ninja -v &
 alias dmmx="cd build && cmake -DCMAKE_BUILD_TYPE=Debug -GNinja .. && ninja -v && cd .. || cd .."
 alias cmmx="rm -rf build && mkdir build && mmx"
 alias cdmmx="rm -rf build && mkdir build && dmmx"
+alias mx_path='python -c "import mxnet as mx; print(mx.__path__)"'
 git_squash() {
         if [[ $1 -eq 0 ]] ; then
                 echo 'Enter number of commits you want to squash from HEAD(including HEAD)'
