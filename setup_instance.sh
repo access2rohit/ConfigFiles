@@ -24,5 +24,4 @@ bash install_ocaml_unison.sh
 cd ${HOME}
 rm -rf ${HOME}/temp
 
-cd ${HOME}
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
