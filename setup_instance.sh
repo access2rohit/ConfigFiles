@@ -13,12 +13,15 @@ wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/bashrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/gitconfig
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/screenrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_config
+wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/vimrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
 
 cat bashrc >> ${HOME}/.bashrc
 cat gitconfig >> ${HOME}/.gitconfig
 cat screenrc >> ${HOME}/.screenrc
+cat vimrc >> ${HOME}/.vimrc
 cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
+bash install_vundle.sh
 bash install_ocaml_unison.sh
 
 cd ${HOME}
