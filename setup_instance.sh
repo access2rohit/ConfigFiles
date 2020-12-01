@@ -2,6 +2,12 @@
 sudo apt update
 sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev
 
+# Removes conflictings openBLAS libraries and updates default BLAS to point to newly install openBLAS from previous step
+sudo update-alternatives --remove-all liblapack.so-x86_64-linux-gnu
+sudo update-alternatives --remove-all liblapack.so.3-x86_64-linux-gnu
+sudo update-alternatives --install /usr/lib/x86_64-linux-gnu/libblas.so libblas.so-x86_64-linux-gnu /usr/local/lib/libopenblas.a 41 --slave /usr/lib/x86_64-linux-gnu/liblapack.so liblapack.so-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0
+sudo update-alternatives --install /usr/lib/x86_64-linux-gnu/libblas.so.3 libblas.so.3-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0 41 --slave /usr/lib/x86_64-linux-gnu/liblapack.so.3 liblapack.so.3-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0
+
 mkdir ${HOME}/workspace
 cd ${HOME}/workspace
 git clone --recursive https://github.com/apache/incubator-mxnet.git
