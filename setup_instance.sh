@@ -30,6 +30,8 @@ rm -rf ${HOME}/temp
 
 # Setup Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+# Install plugins present in vimrc
+vim +PluginInstall +qal
 
 # Create conda ENV names pytest for running tests with `pytest`
 conda create -n pytest python=3.6 numpy scikit-learn contextvars -y
