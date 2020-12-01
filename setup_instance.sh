@@ -5,6 +5,7 @@ sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1
 mkdir ${HOME}/workspace
 cd ${HOME}/workspace
 git clone --recursive https://github.com/apache/incubator-mxnet.git
+cp ${HOME}/workspace/incubator-mxnet/config/linux_gpu.cmake ${HOME}/workspace/incubator-mxnet/config.cmake
 
 mkdir ${HOME}/temp
 cd ${HOME}/temp
@@ -26,5 +27,12 @@ bash install_ocaml_unison.sh
 
 cd ${HOME}
 rm -rf ${HOME}/temp
+
+# Setup Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+# Create conda ENV names pytest for running tests with `pytest`
+conda create -n pytest python=3.6 numpy scikit-learn contextvars -y
+
 
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
