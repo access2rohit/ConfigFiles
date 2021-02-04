@@ -30,6 +30,7 @@ cat vimrc >> ${HOME}/.vimrc
 cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
 bash install_vundle.sh
 bash install_ocaml_unison.sh
+bash install_cmake.sh
 
 cd ${HOME}
 rm -rf ${HOME}/temp
