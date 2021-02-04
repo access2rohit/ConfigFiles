@@ -6,3 +6,4 @@ tar xf cmake-3.13.3.tar.gz
 cd cmake-3.13.3
 ./configure
 make
+sudo make install
