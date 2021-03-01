@@ -18,6 +18,14 @@ alias cdmmx="rm -rf build && mkdir build && dmmx"
 alias mx_path='python -c "import mxnet as mx; print(mx.__path__)"'
 alias mx='cd ${HOME}/workspace/incubator-mxnet'
 
+add_remote() {
+        if [[ -z $1 ]] ; then
+                echo 'Enter github alias of org/user whose fork you want to add to your remote'
+                return
+        fi
+        git remote add $1 git@github.com:$1/incubator-mxnet.git
+}
+
 rebase() {
         if [[ -z $1 ]] ; then
                 echo 'Enter remote branch name your want to rebase with'
