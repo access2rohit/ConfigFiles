@@ -33,7 +33,7 @@ rebase() {
         git stash
         git fetch upstream
         git rebase upstream/$1
-        git stash -q pop
+        git stash pop -q
 }
 
 git_squash() {
