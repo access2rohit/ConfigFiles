@@ -44,8 +44,6 @@ git_squash() {
         git add -u
         git ci -m "temp commit"
         git rebase -i HEAD~$1
-        git fetch upstream
-        git rebase upstream/master
 }
 
 force_push() {
