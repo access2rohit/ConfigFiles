@@ -17,6 +17,10 @@
 # Debug mode w/ code sync run:
 # $ bash setup_instance.ch debug sync
 
+##
+## Author: access2rohit(srivastava.141@osu.edu)
+##
+
 set -eo pipefail
 
 typeset -l $1
@@ -54,7 +58,6 @@ wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_con
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/vimrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_vundle.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_cmake.sh
-wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_python_debug.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_valgrind.sh
 
 cat bashrc >> ${HOME}/.bashrc
