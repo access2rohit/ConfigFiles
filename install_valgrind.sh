@@ -7,3 +7,5 @@ cd $DIR/valgrind
 ./configure --prefix=$(pwd)
 make
 sudo make install
+echo "export PATH=$PATH:${DIR}/valgrind/bin" >> ${HOME}/.bashrc
+echo "export VALGRIND_LIB=${DIR}/valgrind/lib/valgrind" >> ${HOME}/.bashrc
