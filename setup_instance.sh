@@ -92,7 +92,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qal
 
 # Create conda ENV names pytest for running tests with `pytest`
-conda create -n pytest python=3.6 numpy scikit-learn contextvars requests -y
+conda create -n pytest python=3.7 numpy scikit-learn contextvars requests -y
 
 
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
