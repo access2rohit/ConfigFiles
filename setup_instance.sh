@@ -1,7 +1,30 @@
 #!/bin/bash
+# Debug(debug) mode setup: additionally installs python debug mode and valgrind
+# over the normal Developer(dev) mode setup
+# Python debug build is very slow and valgrid can introduce slowdowns upto 20x
+# Hence do not setup Debug mode unless you need it !!
+
+# Sync option installs unison on your machine for code sync
+# you still need to configure it on your local PC for sync to work
+
+## Types of setups possible with this script ##
+# Developer mode w/o code sync run:
+# $ bash setup_instance.ch dev
+# Developer mode w/ code sync run:
+# $ bash setup_instance.ch dev sync
+# Debug mode w/o code sync run:
+# $ bash setup_instance.ch debug
+# Debug mode w/ code sync run:
+# $ bash setup_instance.ch debug sync
+
 set -eo pipefail
 
-if [[ $1 == "debug" ]]; then
+typeset -l $1
+typeset -l $2
+if [[ -z $1 ]]; then
+  echo "You must specify instance setup mode 'dev' or 'debug'"
+  return
+elif [[ $1 == "debug" ]]; then
   echo "Instance being setup in Debug mode"
 else
   echo "Instance type not sepecified setting up in Developer mode by default"
@@ -30,7 +53,6 @@ wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/screenrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_config
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/vimrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_vundle.sh
-wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_cmake.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_python_debug.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_valgrind.sh
@@ -40,8 +62,14 @@ cat gitconfig >> ${HOME}/.gitconfig
 cat screenrc >> ${HOME}/.screenrc
 cat vimrc >> ${HOME}/.vimrc
 cat mxnet_config > ${HOME}/workspace/incubator-mxnet/.git/config
+
+# Install unison if setup needs code sync
+if [[ $2 == "sync" ]]; then
+  echo "Installing unison for code sync"
+  wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
+  bash install_ocaml_unison.sh
+fi
 bash install_vundle.sh
-bash install_ocaml_unison.sh
 bash install_cmake.sh
 
 cd ${HOME}
