@@ -1,4 +1,12 @@
 #!/bin/bash
+set -eo pipefail
+
+if [[ $1 == "debug" ]]; then
+  echo "Instance being setup in Debug mode"
+else
+  echo "Instance type not sepecified setting up in Developer mode by default"
+fi
+
 sudo apt update
 sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev
 
@@ -36,6 +44,15 @@ bash install_cmake.sh
 
 cd ${HOME}
 rm -rf ${HOME}/temp
+
+# install debug tools if instance type is "Debug"
+typeset -l $1
+if [[ $1 == "debug" ]]; then
+  mkdir -p ${HOME}/debugging_tools
+  cd ${HOME}/debugging_tools
+  bash install_python_debug.sh
+  bash install_valgrind.sh
+fi
 
 # Setup Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
