@@ -58,7 +58,6 @@ wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/mxnet_con
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/vimrc
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_vundle.sh
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_cmake.sh
-wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_valgrind.sh
 
 cat bashrc >> ${HOME}/.bashrc
 cat gitconfig >> ${HOME}/.gitconfig
@@ -81,6 +80,8 @@ rm -rf ${HOME}/temp
 # Install debug tools if instance setup mode is "Debug"
 typeset -l $1
 if [[ $1 == "debug" ]]; then
+  wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_python_debug.sh
+  wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_valgrind.sh
   bash install_python_debug.sh
   bash install_valgrind.sh
 fi
