@@ -6,4 +6,4 @@ cd $HOME/valgrind
 ./configure --prefix=$HOME/valgrind
 make
 sudo make install
-echo "export PATH=\$PATH:\$HOME/valgrind/bin" >> ${HOME}/.bashrc
+echo "export PATH=\$HOME/valgrind/bin:\$PATH" >> ${HOME}/.bashrc
