@@ -9,4 +9,5 @@ sudo make OPT=-g && sudo make install
 cp $DIR/Python-3.6.12/Misc/valgrind-python.supp $HOME/workspace/incubator-mxnet
 echo "export PATH=/usr/bin:/bin:/opt/debugpython/bin:\$PATH" >> ${HOME}/.bashrc
 sudo update-alternatives --install /usr/bin/python python /opt/debugpython/bin/python3 10
+rm Python-3.6.12.tgz
 echo "Uncomment PyObject_Free and PyObject_Realloc in the valgring suppression file."
