@@ -1,5 +1,5 @@
 DIR=$(pwd)
-wget https://www.python.org/ftp/python/3.6.12/Python-3.6.12.tgz   
+wget https://www.python.org/ftp/python/3.7.10/Python-3.7.10.tgz
 tar -xvzf Python-3.6.12.tgz
 cd Python-3.6.12
 ./configure --with-pydebug --without-pymalloc --with-valgrind --prefix /opt/debugpython/
