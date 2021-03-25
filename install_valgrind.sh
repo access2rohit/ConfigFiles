@@ -1,12 +1,9 @@
 #!/bin/bash
 
-DIR=$(pwd)
-LOC=/usr/local/valgrind
 git clone git://sourceware.org/git/valgrind.git
-cd $DIR/valgrind
+cd $HOME/valgrind
 ./autogen.sh
-./configure --prefix=${LOC}
+./configure --prefix=$HOME/valgrind
 make
 sudo make install
-echo "export PATH=\$PATH:${LOC}/bin" >> ${HOME}/.bashrc
-echo "export VALGRIND_LIB=${LOC}/lib/valgrind" >> ${HOME}/.bashrc
+echo "export PATH=\$PATH:\$HOME/valgrind/bin" >> ${HOME}/.bashrc
