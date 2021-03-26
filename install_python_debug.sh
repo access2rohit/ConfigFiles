@@ -10,5 +10,11 @@ sudo make OPT=-g && sudo make install
 cp $DIR/Python-$VERSION/Misc/valgrind-python.supp $HOME/workspace/incubator-mxnet
 echo "export PATH=/usr/bin:/bin:/opt/debugpython/bin:\$PATH" >> ${HOME}/.bashrc
 sudo update-alternatives --install /usr/bin/python python /opt/debugpython/bin/python3 10
+
+/opt/debugpython/bin/python3 -m venv $HOME/virtualenv/pytest
+source $HOME/virtualenv/pytest/bin/activate
+/opt/debugpython/bin/python3 -m pip install numpy scikit-learn contextvars requests
+deactivate
+
 rm ../Python-$VERSION.tgz
 echo "Uncomment PyObject_Free and PyObject_Realloc in the valgring suppression file."
