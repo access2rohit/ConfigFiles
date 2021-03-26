@@ -34,8 +34,10 @@ else
   echo "Instance type not sepecified setting up in Developer mode by default"
 fi
 
+sudo add-apt-repository ppa:jonathonf/vim
 sudo apt update
-sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev valgrind
+sudo apt remove vim vim-runtime gvim
+sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev valgrind vim
 
 # Removes conflictings openBLAS libraries and updates default BLAS to point to newly install openBLAS from previous step
 sudo update-alternatives --remove-all liblapack.so-x86_64-linux-gnu
