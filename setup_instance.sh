@@ -86,11 +86,5 @@ if [[ $1 == "debug" ]]; then
   bash install_valgrind.sh
 fi
 
-# Create conda ENV names pytest for running tests with `pytest`
-conda create -n pytest python=3.7 -y
-source activate pytest
-pip install numpy scikit-learn contextvars requests
-source deactivate pytest
-
 
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
