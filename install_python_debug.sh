@@ -13,7 +13,12 @@ sudo update-alternatives --install /usr/bin/python python /opt/debugpython/bin/p
 
 /opt/debugpython/bin/python3 -m venv $HOME/virtualenv/pytest
 source $HOME/virtualenv/pytest/bin/activate
-/opt/debugpython/bin/python3 -m pip install numpy scikit-learn contextvars requests
+/opt/debugpython/bin/python3 -m pip install numpy
+/opt/debugpython/bin/python3 -m pip install scikit-learn
+/opt/debugpython/bin/python3 -m pip install requests
+/opt/debugpython/bin/python3 -m pip install contextvars
+/opt/debugpython/bin/python3 -m pip install nose
+/opt/debugpython/bin/python3 -m pip install pytest
 deactivate
 
 rm ../Python-$VERSION.tgz
