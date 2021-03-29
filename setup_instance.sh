@@ -76,9 +76,6 @@ fi
 bash install_vundle.sh
 bash install_cmake.sh
 
-cd ${HOME}
-rm -rf ${HOME}/temp
-
 # Install debug tools if instance setup mode is "Debug"
 typeset -l $1
 if [[ $1 == "debug" ]]; then
@@ -88,5 +85,7 @@ if [[ $1 == "debug" ]]; then
   bash install_valgrind.sh
 fi
 
+cd ${HOME}
+rm -rf ${HOME}/temp
 
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
