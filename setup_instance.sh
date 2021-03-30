@@ -86,6 +86,6 @@ if [[ $1 == "debug" ]]; then
 fi
 
 cd ${HOME}
-rm -rf ${HOME}/temp
+sudo rm -rf ${HOME}/temp
 
 echo "SUCCESS! Either 'source ~/.bashrc' or logout and login again for changes to take effect"
