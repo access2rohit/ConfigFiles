@@ -9,13 +9,13 @@
 
 ## Types of setups possible with this script ##
 # Developer mode w/o code sync run:
-# $ bash setup_instance.ch dev
+# $ bash setup_instance.sh dev
 # Developer mode w/ code sync run:
-# $ bash setup_instance.ch dev sync
+# $ bash setup_instance.sh dev sync
 # Debug mode w/o code sync run:
-# $ bash setup_instance.ch debug
+# $ bash setup_instance.sh debug
 # Debug mode w/ code sync run:
-# $ bash setup_instance.ch debug sync
+# $ bash setup_instance.sh debug sync
 
 ##
 ## Author: access2rohit(srivastava.141@osu.edu)
