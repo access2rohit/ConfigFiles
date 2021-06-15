@@ -45,12 +45,12 @@ sudo update-alternatives --remove-all liblapack.so.3-x86_64-linux-gnu
 sudo update-alternatives --install /usr/lib/x86_64-linux-gnu/libblas.so libblas.so-x86_64-linux-gnu /usr/local/lib/libopenblas.a 41 --slave /usr/lib/x86_64-linux-gnu/liblapack.so liblapack.so-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0
 sudo update-alternatives --install /usr/lib/x86_64-linux-gnu/libblas.so.3 libblas.so.3-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0 41 --slave /usr/lib/x86_64-linux-gnu/liblapack.so.3 liblapack.so.3-x86_64-linux-gnu /usr/local/lib/libopenblas.so.0
 
-mkdir ${HOME}/workspace
+mkdir -p ${HOME}/workspace
 cd ${HOME}/workspace
 git clone --recursive https://github.com/apache/incubator-mxnet.git
 cp ${HOME}/workspace/incubator-mxnet/config/linux_gpu.cmake ${HOME}/workspace/incubator-mxnet/config.cmake
 
-mkdir ${HOME}/temp
+mkdir -p ${HOME}/temp
 cd ${HOME}/temp
 
 wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/bashrc
