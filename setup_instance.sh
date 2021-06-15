@@ -31,7 +31,7 @@ if [[ -z $1 ]]; then
 elif [[ $1 == "debug" ]]; then
   echo "Instance being setup in Debug mode"
 else
-  echo "Instance type not sepecified setting up in Developer mode by default"
+  echo "Instance being setup in Developer mode"
 fi
 
 sudo add-apt-repository ppa:jonathonf/vim -y
