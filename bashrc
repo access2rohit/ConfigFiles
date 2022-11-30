@@ -58,6 +58,11 @@ push() {
         git push origin $BRANCH_NAME
 }
 
+cleanup_docker() {
+  docker ps -f status=exited -q | xargs -r docker rm
+  docker images -f dangling=true -q | xargs -r docker rmi
+}
+
 case "$TERM" in
 xterm*|rxvt*)
         PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
