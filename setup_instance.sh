@@ -37,7 +37,7 @@ fi
 sudo add-apt-repository ppa:jonathonf/vim -y
 sudo apt update
 sudo apt remove -y vim vim-runtime gvim
-sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev valgrind vim python3.9
+sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev valgrind vim python3.9 python3.9-dev
 
 
 sudo ln -s /usr/bin/python3.9 /usr/local/bin/python
