@@ -6,4 +6,4 @@ wget -q https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cma
 tar -zxvf cmake-${CMAKE_VERSION}.tar.gz
 cd cmake-${CMAKE_VERSION}
  ./bootstrap
-make -j $(nproc) && make install
+make -j $(nproc) && sudo make install
