@@ -6,4 +6,4 @@ vim +PluginInstall +qall
 
 # Compile YCM
 cd ~/.vim/bundle/YouCompleteMe
-python3 install.py --all
+python3 install.py --clangd-completer
