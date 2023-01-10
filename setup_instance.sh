@@ -43,7 +43,7 @@ sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1
 sudo ln -s /usr/bin/python3.9 /usr/local/bin/python
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
-pip --no-cache-dir install --upgrade
+pip --no-cache-dir install pip --upgrade
 pip
 
 # Removes conflictings openBLAS libraries and updates default BLAS to point to newly install openBLAS from previous step
