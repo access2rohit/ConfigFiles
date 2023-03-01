@@ -24,6 +24,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Vimjas/vim-python-pep8-indent'
 " You Complete Me
 Plugin 'Valloric/YouCompleteMe'
+" NERDTree
+Plugin 'preservim/nerdtree'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
