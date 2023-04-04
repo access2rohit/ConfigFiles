@@ -47,6 +47,10 @@ python get-pip.py
 pip --no-cache-dir install pip --upgrade
 pip
 
+# install miniconda for python3.9
+wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh
+bash Miniconda3-py39_23.1.0-1-Linux-x86_64.sh -b
+
 # Removes conflictings openBLAS libraries and updates default BLAS to point to newly install openBLAS from previous step
 sudo update-alternatives --remove-all liblapack.so-x86_64-linux-gnu
 sudo update-alternatives --remove-all liblapack.so.3-x86_64-linux-gnu
