@@ -7,6 +7,8 @@ colorscheme default
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
+map <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-e> <Plug>(ale_next_wrap)
 
 " Vundle Vim
 set nocompatible              " be iMproved, required
@@ -26,6 +28,8 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'Valloric/YouCompleteMe'
 " NERDTree
 Plugin 'preservim/nerdtree'
+" ALE
+Plugin 'dense-analysis/ale'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -50,6 +54,27 @@ endif
 
 let g:NERDTreeShowGitStatus=1
 let NERDTreeShowHidden=1
+
+let g:ale_linters = {'python': ['mypy', 'bandit', 'pydocstyle']}
+let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_save = 1
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+    return l:counts.total == 0 ? 'OK' : printf(
+        \   '%d⨉ %d⚠ ',
+        \   all_non_errors,
+        \   all_errors
+        \)
+endfunction
+set statusline+=%=
+set statusline+=\ %{LinterStatus()}
+let g:ale_set_highlights = 0
+let g:ale_virtualtext_cursor = 'disabled'
 
 " This will check the current folder for tags file and keep going one directory up all the way to the root folder.
 set tags=tags;/
