@@ -8,7 +8,11 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
 map <C-n> :NERDTreeToggle<CR>
+map <silent> <F2> :TagbarToggle<CR>
+set tags+=tags;/
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
+map <leader>] :bnext<CR>
+map <leader>[ :bprevious<CR>
 
 " Vundle Vim
 set nocompatible              " be iMproved, required
@@ -30,6 +34,11 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'preservim/nerdtree'
 " ALE
 Plugin 'dense-analysis/ale'
+" VIM-Airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Tagbar
+Plugin 'preservim/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,6 +84,8 @@ set statusline+=%=
 set statusline+=\ %{LinterStatus()}
 let g:ale_set_highlights = 0
 let g:ale_virtualtext_cursor = 'disabled'
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " This will check the current folder for tags file and keep going one directory up all the way to the root folder.
 set tags=tags;/
