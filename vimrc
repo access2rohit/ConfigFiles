@@ -14,6 +14,11 @@ nmap <silent> <C-e> <Plug>(ale_next_wrap)
 map <leader>] :bnext<CR>
 map <leader>[ :bprevious<CR>
 
+nnoremap <leader>f :ALENextWrap<CR>
+nnoremap <leader>b :ALEPreviousWrap<CR>
+nnoremap <leader>F :ALELast<CR>
+nnoremap <leader>B :ALEFirst<CR>
+
 " Vundle Vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
