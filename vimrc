@@ -44,6 +44,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 " Tagbar
 Plugin 'preservim/tagbar'
+" Cuda syntax highlight
+Plugin 'bfrg/vim-cuda-syntax'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
