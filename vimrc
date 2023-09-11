@@ -8,6 +8,8 @@ set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
 map <C-n> :NERDTreeToggle<CR>
+nnoremap <C-g> :YcmCompleter GoToReferences<CR>
+nnoremap <C-f> :YcmCompleter GoToDefinitionElseDeclaration<CR>
 map <silent> <F2> :TagbarToggle<CR>
 set tags+=tags;/
 nmap <silent> <C-e> <Plug>(ale_next_wrap)
@@ -74,8 +76,11 @@ let NERDTreeShowHidden=1
 let g:ale_linters = {'python': ['mypy', 'bandit', 'pydocstyle']}
 let g:ale_fixers = {'*': [], 'python': ['black', 'isort']}
 let g:ale_fix_on_save = 1
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
+" let g:ale_sign_error = '●'
+" let g:ale_sign_warning = '.'
+let g:ale_sign_error = '💣'
+let g:ale_sign_warning = '🚩'
+let g:ale_statusline_format = ['💣 %d', '🚩 %d', '']
 let g:ale_lint_on_save = 1
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
@@ -94,5 +99,9 @@ let g:ale_virtualtext_cursor = 'disabled'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 
+au BufRead,BufNewFile *.cu set filetype=cuda
+au BufRead,BufNewFile *.cuh set filetype=cuda
+
 " This will check the current folder for tags file and keep going one directory up all the way to the root folder.
 set tags=tags;/
+set hidden
