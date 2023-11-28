@@ -76,8 +76,9 @@ if [[ $2 == "sync" ]]; then
   wget https://raw.githubusercontent.com/access2rohit/ConfigFiles/master/install_ocaml_unison.sh
   bash install_ocaml_unison.sh
 fi
-bash install_vundle.sh
+
 bash install_cmake.sh
+bash install_vundle.sh
 
 # Install debug tools if instance setup mode is "Debug"
 typeset -l $1
