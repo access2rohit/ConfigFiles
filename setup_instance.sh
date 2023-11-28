@@ -46,8 +46,6 @@ sudo apt install python3.10-distutils
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 pip --no-cache-dir install pip --upgrade
-pip
-pip install mypy bandit pydocstyle black isort
 
 # install miniconda for python3.9
 wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh
@@ -78,6 +76,9 @@ if [[ $2 == "sync" ]]; then
 fi
 
 bash install_cmake.sh
+
+##### install ALE linter and fixer #####
+pip install mypy bandit pydocstyle black isort
 bash install_vundle.sh
 
 # Install debug tools if instance setup mode is "Debug"
