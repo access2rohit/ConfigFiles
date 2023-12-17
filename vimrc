@@ -4,7 +4,7 @@ set autoindent
 set tabstop=4
 set nonu
 colorscheme default
-set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:·
 " F3: Toggle list (display unprintable characters).
 nnoremap <F3> :set list!<CR>
 map <C-n> :NERDTreeToggle<CR>
