@@ -13,9 +13,6 @@ alias flags='python -c "from mxnet.runtime import Features; print(Features())"'
 alias mmx="cd build && cmake -DCMAKE_BUILD_TYPE=Release -GNinja .. && ninja -v && cd .. || cd .."
 alias cmmx="rm -rf build && mkdir build && mmx"
 alias dmmx="cd build && cmake -DCMAKE_BUILD_TYPE=Debug -GNinja .. && ninja -v && cd .. || cd .."
-alias cdmmx="rm -rf build && mkdir build && dmmx"
-alias mx_path='python -c "import mxnet as mx; print(mx.__path__)"'
-alias mx='cd ${HOME}/workspace/incubator-mxnet'
 
 add_remote() {
         if [[ -z $1 ]] ; then
