@@ -34,22 +34,11 @@ else
   echo "Instance being setup in Developer mode"
 fi
 
-sudo add-apt-repository ppa:jonathonf/vim -y
-sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
-sudo apt remove -y vim vim-runtime gvim neovim
-sudo apt install -y build-essential ninja-build cmake ccache htop stow zsh zlib1g-dev libffi-dev libssl-dev libbz2-dev libsqlite3-dev libreadline6-dev libjemalloc-dev libopenblas-dev libopencv-dev valgrind vim python3.10 python3.10-dev
 
-
-sudo ln -s /usr/bin/python3.10 /usr/local/bin/python
-sudo apt install python3.10-distutils
 curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 python get-pip.py
 pip --no-cache-dir install pip --upgrade
-
-# install miniconda for python3.9
-wget https://repo.anaconda.com/miniconda/Miniconda3-py39_23.1.0-1-Linux-x86_64.sh
-bash Miniconda3-py39_23.1.0-1-Linux-x86_64.sh -b
 
 mkdir -p ${HOME}/workspace
 
