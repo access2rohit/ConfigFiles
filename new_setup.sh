@@ -60,7 +60,13 @@ if [[ $2 == "sync" ]]; then
   bash install_ocaml_unison.sh
 fi
 
-pip install mypy bandit pydocstyle black isort
+sudo apt install -y \
+  python3-mypy \
+  python3-bandit \
+  python3-pydocstyle \
+  python3-black \
+  python3-isort
+sudo apt install -y --upgrade nvitop bpytop
 bash install_vundle.sh
 
 # Install debug tools if instance setup mode is "Debug"
