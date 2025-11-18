@@ -64,7 +64,6 @@ sudo apt install -y \
   python3-mypy \
   python3-bandit \
   python3-pydocstyle \
-  python3-black \
   python3-isort
 sudo apt install -y --upgrade nvitop bpytop
 bash install_vundle.sh
