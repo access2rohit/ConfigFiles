@@ -35,7 +35,7 @@ else
 fi
 
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 mkdir -p ${HOME}/workspace/
 
