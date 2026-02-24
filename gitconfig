@@ -1,5 +1,5 @@
 [user]
-    email = srivastava.141@buckeyemail.osu.edu
+    email = 141.srivastava@gmail.com
     name = Rohit Kumar Srivastava
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
